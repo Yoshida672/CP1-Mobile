@@ -1,10 +1,13 @@
 import { Text, View } from "react-native";
-export default function CalculoPercentagem({ produto, valor, numero }) {
-    const valorFinal = valor * ((numero / 100) + 1);
+import { estilo } from "../estilo";
+export default function CalculoPercentagem({ produto, valor, numero, valorAumento, valorFinal }) {
+
     return (
         <View>
-            <Text>Produto: {produto} {valor}R$</Text>
-            <Text>Produto com Aumento: {valorFinal}</Text>
+            <Text style={estilo.resultText}>Percentual de Aumento: {numero} %</Text>
+            <Text style={estilo.resultText}>Produto: {produto} {valor} R$</Text>
+            <Text style={estilo.resultText}>Valor do Aumento: {valorAumento} R$</Text>
+            <Text style={estilo.resultText}>Produto com Aumento: {valorFinal} R$</Text>
         </View>
     )
 }
